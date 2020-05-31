@@ -25,7 +25,7 @@ cd /D C:
 
 :: On récupère l'ID du joueur qui est différente selon les clients (PC)
 :: --------------------------------------------------------------------
-cd /D %APPDATA%\Axolot Games\Scrap Mechanic\User
+cd %APPDATA%\Axolot Games\Scrap Mechanic\User
 for /D %%d in (*) do (
   set scrapUserID=%cd%\%%d
 )
@@ -41,7 +41,7 @@ if not exist Backup (
 :: sur l'executable "7za.exe" qui créera l'archive au format .zip
 :: ----------------------------------------------------------------------------
 set currentBatchPath=%~dp0
-set zipApp=%currentBatchPath%7za.exe
+set zipApp="%currentBatchPath%7za.exe"
 
 cd Survival
 %zipApp% a -tzip ..\Backup\Maps_%day%-%mon%-%yr%_%hr%-%min%-%sec%.zip -r *.* -mx5
