@@ -3,7 +3,4 @@ Il vous est sans doute déjà arrivé de perdre une map à cause d'un bug ; ce q
 À note qu'il n'y a pas de système d'automatisation de ces sauvegardes par défaut. C'est pour cette raison que j'ai créé un petit tuto vidéo dans laquelle je programme le lancement de cette tâche par le biais du planificateur de tâches de Windows. Si vous savez un programme plus simples et pouvant fonctionner en standalone (sans installation), n'hésitez pas à m'en faire part.
 
 ## Installation
-Télécharger l'archive, décompressez-là où vous le souhaitez sur votre ordinateur, et suivez simplement le tutoriel vidéo en cliquant sur le lien qui suit : [Sauvegardes automatiques mondes Scrap Mechanic](https://youtu.be/K--BMoXoZwk)
-
-
-
+Télécharger l'archive "sm_backup.zip", décompressez-là où vous le souhaitez sur votre ordinateur, et suivez simplement le tutoriel vidéo en cliquant sur le lien qui suit : [Sauvegardes automatiques mondes Scrap Mechanic](https://youtu.be/K--BMoXoZwk)
