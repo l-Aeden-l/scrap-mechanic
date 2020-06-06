@@ -21,6 +21,9 @@ set hr=%dateTime:~8,2%
 set min=%dateTime:~10,2%
 set sec=%dateTime:~12,2%
 
+:: Si le script est exécuté sur un autre disque, on se repositionne sur le C:
+:: afin de travailler sur le bon chemin, et ainsi éviter tout erreur
+:: --------------------------------------------------------------------------
 cd /D C:
 
 :: On récupère l'ID du joueur qui est différente selon les clients (PC)
@@ -43,8 +46,15 @@ if not exist Backup (
 set currentBatchPath=%~dp0
 set zipApp="%currentBatchPath%7za.exe"
 
-cd Survival
+:: On crée un dossier temporaire afin de pouvoir effectuer la sauvegarde du ou
+:: des mondes, et en particulier celui actif - sur lequel jouent les joueurs.
+:: ---------------------------------------------------------------------------
+mkdir Temp
+robocopy /s Survival Temp
+cd Temp
 %zipApp% a -tzip ..\Backup\Maps_%day%-%mon%-%yr%_%hr%-%min%-%sec%.zip -r *.* -mx5
+cd ..
+rd /s /q Temp
 
 :: Supprime une ou des sauvegardes vieilles de plusieurs jours
 :: Vous pouvez changer la valeur de "daysNumber" à votre convenance
